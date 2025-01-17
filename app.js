@@ -36,9 +36,7 @@ async function sendTelegramMessage(message) {
 
 // Function to scrape and search information on the website
 async function scrapeAndSearch() {
-  const browser = await playwright.chromium.connect(
-    process.env.BROWSER_PLAYWRIGHT_ENDPOINT
-  );
+  const browser = await chromium.launch();
   const context = await browser.newContext();
   const page = await context.newPage();
 
